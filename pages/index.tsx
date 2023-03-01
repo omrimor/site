@@ -1,90 +1,80 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 
 const companies = [
-  { name: "Microsoft", url: "https://www.microsoft.com/" },
-  { name: "Cwt", url: "https://www.cwt.com/" },
-  { name: "Healthy.io", url: "https://www.healthy.io/" },
+  { name: "Microsoft", url: "https://powerbi.microsoft.com/" },
+  { name: "Cwt", url: "https://www.mycwt.com/" },
+  { name: "Healthy.io", url: "https://healthy.io/" },
   { name: "Lemonade", url: "https://www.lemonade.com/" },
-  { name: "Balance", url: "https://www.balance.com/" },
+  { name: "Balance", url: "https://www.getbalance.com/" },
+];
+
+const links = [
+  { name: "Email", url: "mailto:omrimorr@gmail.com" },
+  { name: "Twitter", url: "https://twitter.com/omrimorr" },
+  { name: "Github", url: "https://github.com/omrimor" },
+  { name: "Dribble", url: "https://dribbble.com/omri" },
 ];
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-white dark:bg-slate-800 flex min-h-screen flex-col justify-center py-2">
+    <div className="bg-white dark:bg-neutral-900 flex min-h-screen flex-col justify-center py-2">
       <Head>
-        <title>Hi, I'm Omri</title>
+        <title>Hi, I'm Omri | עמרי מור</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="flex w-full flex-1 flex-col justify-center px-12">
-        <section>
-          <h1 className="text-4xl font-bold text-slate-900 dark:text-white font-serif">
-            Hi, I'm Omri
+      <main className="flex w-full flex-1 flex-col justify-center px-12 lg:px-20">
+        <section className="max-w-2xl">
+          <h1 className="text-4xl font-bold text-stone-900 dark:text-white font-serif">
+            Hi, I'm Omri 👋
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 font-sans">
-            I've been making websites for close to 15 years.
+          <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
+            I've been making websites for the last 12 years.
           </p>
         </section>
-        <section className="mt-5">
-          <h2 className="text-2xl text-slate-900 dark:text-white font-bold tracking-tight font-serif">
+        <section className="mt-12 max-w-2xl">
+          <h2 className="text-2xl text-stone-900 dark:text-white font-medium tracking-tight font-serif">
             Work
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 font-sans">
-            I started off as a visual designer but have gradually been shifting
-            towards development and code.
+          <p className="mt-4 text-stone-500 dark:text-stone-400 font-sans text-lg">
+            Im a frontend developer (past product designer) with a passion for
+            all things web, interaction and typography.
           </p>
-          <p className="text-slate-500 dark:text-slate-400 font-sans break-words">
-            I've had the opportunity to help folks at{" "}
-            {companies.map((company) => (
+          <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans break-words text-lg">
+            I've had the opportunity to help folks at&nbsp;
+            {companies.map((company, index) => (
               <a
                 key={company.name}
-                className="text-slate-900 dark:text-white hover:underline px-1"
+                className="text-stone-900 dark:text-white hover:dark:bg-white hover:dark:text-stone-900 hover:bg-stone-900 hover:text-white whitespace-nowrap mr-1 last:mr-0"
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {company.name}
+                {index === companies.length - 1 ? "" : ","}
               </a>
             ))}
+            &nbsp;and more.
           </p>
         </section>
-        <section className="mt-5">
-          <h2 className="text-2xl text-slate-900 dark:text-white font-bold tracking-tight font-serif">
+        <section className="mt-12 max-w-2xl">
+          <h2 className="text-2xl text-stone-900 dark:text-white font-medium tracking-tight font-serif">
             Links
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 font-sans">
-            Say hi at{" "}
-            <a
-              href="https://www.theschool.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Email
-            </a>
-            Or find me on{" "}
-            <a
-              href="https://www.theschool.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://www.theschool.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github
-            </a>
-            <a
-              href="https://www.theschool.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Dribble
-            </a>
+          <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans break-words text-lg">
+            Find me on&nbsp;
+            {links.map((link, index) => (
+              <a
+                key={link.name}
+                className="text-stone-900 dark:text-white hover:dark:bg-white hover:dark:text-stone-900 hover:bg-stone-900 hover:text-white whitespace-nowrap mr-1 last:mr-0"
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.name}
+                {index === links.length - 1 ? "" : ","}
+              </a>
+            ))}
           </p>
         </section>
       </main>
