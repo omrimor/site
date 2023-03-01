@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex w-full flex-1 flex-col justify-center px-12 lg:px-20">
         <section className="max-w-2xl">
-          <h1 className="text-4xl font-bold text-stone-900 dark:text-white font-serif">
+          <h1 className="text-4xl font-medium text-stone-900 dark:text-white font-serif">
             Hi, I'm Omri 👋
           </h1>
           <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
@@ -37,11 +37,12 @@ const Home: NextPage = () => {
             Work
           </h2>
           <p className="mt-4 text-stone-500 dark:text-stone-400 font-sans text-lg">
-            Im a frontend developer (past product designer) with a passion for
+            I'm a frontend developer (past product designer) with a passion for
             all things web, interaction and typography.
           </p>
           <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans break-words text-lg">
-            I've had the opportunity to help folks at&nbsp;
+            I've had the opportunity to help folks ship great experiences
+            at&nbsp;
             {companies.map((company, index) => (
               <a
                 key={company.name}
