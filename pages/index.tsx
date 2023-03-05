@@ -36,17 +36,17 @@ const Home: NextPage = () => {
           <h2 className="text-2xl text-stone-900 dark:text-white font-medium tracking-tight font-serif">
             Work
           </h2>
-          <p className="mt-4 text-stone-500 dark:text-stone-400 font-sans text-lg">
+          <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
             I'm a frontend developer (past product designer) with a passion for
             all things web, interaction and typography.
           </p>
-          <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans break-words text-lg">
+          <p className="mt-2 text-stone-500 dark:text-stone-400 font-sans text-lg">
             I've had the opportunity to help folks ship great experiences
             at&nbsp;
             {companies.map((company, index) => (
               <a
                 key={company.name}
-                className="text-stone-900 dark:text-white hover:dark:bg-white hover:dark:text-stone-900 hover:bg-stone-900 hover:text-white whitespace-nowrap mr-1 last:mr-0"
+                className="inline-block text-stone-900 dark:text-white hover:dark:bg-white hover:dark:text-stone-900 hover:bg-stone-900 hover:text-white mr-1 last:mr-0"
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
             {links.map((link, index) => (
               <a
                 key={link.name}
-                className="text-stone-900 dark:text-white hover:dark:bg-white hover:dark:text-stone-900 hover:bg-stone-900 hover:text-white whitespace-nowrap mr-1 last:mr-0"
+                className="inline-block text-stone-900 dark:text-white hover:dark:bg-white hover:dark:text-stone-900 hover:bg-stone-900 hover:text-white whitespace-nowrap mr-1 last:mr-0"
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
