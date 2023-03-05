@@ -41,8 +41,7 @@ const Home: NextPage = () => {
             all things web, interaction and typography.
           </p>
           <p className="mt-2 text-stone-500 dark:text-stone-400 font-sans text-lg">
-            I've had the opportunity to help folks ship great experiences
-            at&nbsp;
+            I've had the opportunity to help folks ship great experiences at{" "}
             {companies.map((company, index) => (
               <a
                 key={company.name}
@@ -54,8 +53,8 @@ const Home: NextPage = () => {
                 {company.name}
                 {index === companies.length - 1 ? "" : ","}
               </a>
-            ))}
-            &nbsp;and more.
+            ))}{" "}
+            and more.
           </p>
         </section>
         <section className="mt-12 max-w-2xl">
