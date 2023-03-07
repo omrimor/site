@@ -24,24 +24,28 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex w-full flex-1 flex-col justify-center px-12 lg:px-20">
-        <section className="max-w-2xl">
+        <section className="max-w-md">
           <h1 className="text-4xl font-medium text-stone-900 dark:text-white font-serif">
             Hi, I'm Omri 👋
           </h1>
           <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
             I've been making websites for the last 12 years.
           </p>
+          <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
+            I'm a frontend developer with a passion for all things web,
+            interaction and typography.
+          </p>
         </section>
-        <section className="mt-12 max-w-2xl">
+        <section className="mt-12 max-w-md">
           <h2 className="text-2xl text-stone-900 dark:text-white font-medium tracking-tight font-serif">
             Work
           </h2>
           <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
-            I'm a frontend developer (past product designer) with a passion for
-            all things web, interaction and typography.
+            I started as a product designer and later on transitioned into
+            practicing user centric design thinking in development and code.
           </p>
           <p className="mt-2 text-stone-500 dark:text-stone-400 font-sans text-lg">
-            I've had the opportunity to help folks ship great experiences at{" "}
+            I've had the opportunity to help people ship great experiences at{" "}
             {companies.map((company, index) => (
               <a
                 key={company.name}
@@ -57,7 +61,7 @@ const Home: NextPage = () => {
             and more.
           </p>
         </section>
-        <section className="mt-12 max-w-2xl">
+        <section className="mt-12 max-w-md">
           <h2 className="text-2xl text-stone-900 dark:text-white font-medium tracking-tight font-serif">
             Links
           </h2>
