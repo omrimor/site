@@ -12,7 +12,7 @@ export default function BlogPage() {
 
   return (
     <section>
-      <h1 className="text-4xl font-medium font-serif">Read my blog</h1>
+      <h1 className="text-2xl font-medium font-serif mb-8">Read my blog</h1>
       {allBlogs
         .sort((a, b) => {
           if (
