@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { Metadata } from "next";
 
 import { getBlogPosts } from "~/app/db/blog";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog",
-  description: "Thoughts on software development, design, life and more.",
+  description: "My ramblings on software development, design, life and more.",
 };
 
 export default function BlogPage() {

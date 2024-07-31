@@ -27,8 +27,8 @@ export async function generateMetadata({
     image,
   } = post.metadata;
   const ogImage = image
-    ? `https://leerob.io${image}`
-    : `https://leerob.io/og?title=${title}`;
+    ? `https://www.omrimor.co.il${image}`
+    : `https://www.omrimor.co.il/og?title=${title}`;
 
   return {
     title,
@@ -38,7 +38,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `https://leerob.io/blog/${post.slug}`,
+      url: `https://www.omrimor.co.il/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -107,12 +107,12 @@ export default function Blog({ params }: { params: Params }) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
-              ? `https://leerob.io${post.metadata.image}`
-              : `https://leerob.io/og?title=${post.metadata.title}`,
-            url: `https://leerob.io/blog/${post.slug}`,
+              ? `https://www.omrimor.co.il${post.metadata.image}`
+              : `https://www.omrimor.co.il/og?title=${post.metadata.title}`,
+            url: `https://www.omrimor.co.il/blog/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "Lee Robinson",
+              name: "Omri Mor",
             },
           }),
         }}

@@ -1,9 +1,3 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Hi, I'm Omri | עמרי מור",
-};
-
 const companies = [
   { name: "Microsoft", url: "https://powerbi.microsoft.com/" },
   { name: "Cwt", url: "https://www.mycwt.com/" },
