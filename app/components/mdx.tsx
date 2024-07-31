@@ -1,13 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ReactNode, AnchorHTMLAttributes, createElement } from "react";
+import {
+  ReactNode,
+  AnchorHTMLAttributes,
+  createElement,
+  ComponentProps,
+} from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 
 import { TweetComponent } from "./tweet";
 import { LiveCode } from "./sandpack";
 
-function Table({ data }) {
+function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   const headers = data.headers.map((header, index) => (
     <th key={index}>{header}</th>
   ));
@@ -48,8 +53,8 @@ function CustomLink(props: CustomLinkProps) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+function RoundedImage(props: ComponentProps<typeof Image>) {
+  return <Image className="rounded-lg" {...props} />;
 }
 
 function Callout(props: { emoji: ReactNode; children: ReactNode }) {
@@ -61,7 +66,7 @@ function Callout(props: { emoji: ReactNode; children: ReactNode }) {
   );
 }
 
-function ProsCard({ title, pros }) {
+function ProsCard({ title, pros }: { title: string; pros: string[] }) {
   return (
     <div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
       <span>{`You might use ${title} if...`}</span>
@@ -90,7 +95,7 @@ function ProsCard({ title, pros }) {
   );
 }
 
-function ConsCard({ title, cons }) {
+function ConsCard({ title, cons }: { title: string; cons: string[] }) {
   return (
     <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
       <span>{`You might not use ${title} if...`}</span>
@@ -115,7 +120,7 @@ function ConsCard({ title, cons }) {
   );
 }
 
-function Code({ children, ...props }) {
+function Code({ children, ...props }: { children: string }) {
   const codeHTML = highlight(children);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
@@ -170,8 +175,9 @@ const components = {
   LiveCode,
 };
 
-export function CustomMDX(props) {
+export function CustomMDX(props: any) {
   return (
+    // @ts-ignore
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
