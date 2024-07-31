@@ -25,6 +25,7 @@ async function TweetContent({ id, components, onError }: TweetProps) {
 }
 
 export function ReactTweet(props: TweetProps) {
+  // @ts-ignore
   return <TweetContent {...props} />;
 }
 
