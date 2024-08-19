@@ -1,9 +1,3 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Hi, I'm Omri | עמרי מור",
-};
-
 const companies = [
   { name: "Microsoft", url: "https://powerbi.microsoft.com/" },
   { name: "Cwt", url: "https://www.mycwt.com/" },
@@ -21,28 +15,20 @@ const links = [
 
 export default function Page() {
   return (
-    <main className="flex w-full flex-1 flex-col py-20 lg:py-0 justify-center px-12 lg:px-20">
-      <section className="max-w-md">
-        <h1 className="text-4xl font-medium text-stone-900 dark:text-white font-serif">
-          Hi, I'm Omri 👋
-        </h1>
-        <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
-          I've been making websites for the last 12 years.
-        </p>
-        <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
-          I'm a frontend developer with a passion for all things web,
-          interaction and typography.
-        </p>
-      </section>
-      <section className="mt-12 max-w-md">
-        <h2 className="text-2xl text-stone-900 dark:text-white font-medium tracking-tight font-serif">
-          Work
-        </h2>
-        <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans text-lg">
+    <section>
+      <h1 className="text-4xl font-medium font-serif">Hi, I'm Omri 👋</h1>
+      <p className="mt-3 text-stone-500 dark:text-stone-400 text-lg">
+        I've been making websites for the last 12 years.
+        <br /> I'm a frontend developer with a passion for all things web,
+        interaction and typography.
+      </p>
+      <div className="mt-12">
+        <h2 className="text-2xl font-medium tracking-tight font-serif">Work</h2>
+        <p className="mt-3 text-stone-500 dark:text-stone-400 text-lg">
           I started as a product designer and later on transitioned into
           practicing user centric design thinking in development and code.
         </p>
-        <p className="mt-2 text-stone-500 dark:text-stone-400 font-sans text-lg">
+        <p className="mt-2 text-stone-500 dark:text-stone-400 text-lg">
           I've had the opportunity to help people ship great experiences at{" "}
           {companies.map((company, index) => (
             <a
@@ -58,12 +44,12 @@ export default function Page() {
           ))}{" "}
           and more.
         </p>
-      </section>
-      <section className="mt-12 max-w-md">
-        <h2 className="text-2xl text-stone-900 dark:text-white font-medium tracking-tight font-serif">
+      </div>
+      <div className="mt-12">
+        <h2 className="text-2xl font-medium tracking-tight font-serif">
           Links
         </h2>
-        <p className="mt-3 text-stone-500 dark:text-stone-400 font-sans break-words text-lg">
+        <p className="mt-3 text-stone-500 dark:text-stone-400 break-words text-lg">
           Find me on&nbsp;
           {links.map((link, index) => (
             <a
@@ -78,7 +64,7 @@ export default function Page() {
             </a>
           ))}
         </p>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
