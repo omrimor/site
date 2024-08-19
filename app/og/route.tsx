@@ -39,7 +39,6 @@ export async function GET(req: NextRequest) {
           }}
         >
           {postTitle}
-          test hashhs
         </div>
       </div>
     ),
