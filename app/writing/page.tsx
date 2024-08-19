@@ -1,19 +1,20 @@
 import Link from "next/link";
 import { Metadata } from "next";
 
-import { getBlogPosts } from "~/app/db/blog";
+import { getBlogPosts } from "~/app/db/writing";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "My ramblings on software development, design, life and more.",
+  title: "Writing",
+  description:
+    "Random thoughts on software development, design, life and more.",
 };
 
 export default function BlogPage() {
-  let allBlogs = getBlogPosts();
+  const allBlogs = getBlogPosts();
 
   return (
     <section>
-      <h1 className="text-2xl font-medium font-serif mb-8">Read my blog</h1>
+      <h1 className="text-2xl font-medium font-serif mb-8">Latest entires</h1>
       {allBlogs
         .sort((a, b) => {
           if (
@@ -27,7 +28,7 @@ export default function BlogPage() {
           <Link
             key={post.slug}
             className="flex flex-col space-y-1 mb-4"
-            href={`/blog/${post.slug}`}
+            href={`/writing/${post.slug}`}
           >
             <div className="w-full flex flex-col">
               <p className="text-stone-500 dark:text-stone-400 text-lg">

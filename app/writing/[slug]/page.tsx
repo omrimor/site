@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
 
-import { getBlogPosts } from "~/app/db/blog";
+import { getBlogPosts } from "~/app/db/writing";
 
 type Params = {
   slug: string;
@@ -38,7 +38,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `https://www.omrimor.co.il/blog/${post.slug}`,
+      url: `https://www.omrimor.co.il/writing/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -109,7 +109,7 @@ export default function Blog({ params }: { params: Params }) {
             image: post.metadata.image
               ? `https://www.omrimor.co.il${post.metadata.image}`
               : `https://www.omrimor.co.il/og?title=${post.metadata.title}`,
-            url: `https://www.omrimor.co.il/blog/${post.slug}`,
+            url: `https://www.omrimor.co.il/writing/${post.slug}`,
             author: {
               "@type": "Person",
               name: "Omri Mor",

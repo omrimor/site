@@ -1,15 +1,15 @@
-import { getBlogPosts } from "~/app/db/blog";
+import { getBlogPosts } from "~/app/db/writing";
 
 export default async function sitemap() {
-  const blogs = getBlogPosts().map((post) => ({
-    url: `https://www.omrimor.co.il/blog/${post.slug}`,
+  const posts = getBlogPosts().map((post) => ({
+    url: `https://www.omrimor.co.il/writing/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
 
-  const routes = ["", "/blog"].map((route) => ({
+  const routes = ["", "/writing"].map((route) => ({
     url: `https://www.omrimor.co.il${route}`,
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...blogs];
+  return [...routes, ...posts];
 }

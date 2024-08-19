@@ -2,7 +2,7 @@ import "./globals.css";
 
 import { ReactNode } from "react";
 import { Navbar } from "~/app/components/nav";
-import { SandpackCSS } from "~/app/blog/[slug]/sandpack";
+import { SandpackCSS } from "~/app/writing/[slug]/sandpack";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
